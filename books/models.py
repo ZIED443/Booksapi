@@ -66,7 +66,7 @@ class Book (models.Model):
     name=models.CharField(max_length=200 , blank=True, null=True)
 
 
-class Bookreservation: 
+class Bookreservation (models.Model): 
     user = models.ForeignKey( User, blank=True,null=True,   on_delete=SET_DEFAULT,  default=None)
     book = models.ForeignKey( Book, blank=True,null=True,   on_delete=SET_DEFAULT,  default=None)
     date1 = models.DateTimeField(blank=True,null=True,default=datetime.now)

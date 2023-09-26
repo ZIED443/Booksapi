@@ -4,7 +4,10 @@ from rest_framework import generics
 from .models import *
 from rest_framework.permissions import  IsAuthenticated
 from books.serializers import *
-
+from rest_framework_simplejwt.views import (TokenObtainPairView,TokenVerifyView)
+from rest_framework_simplejwt.serializers import (
+    TokenObtainPairSerializer
+)
 
 class Booklist(generics.ListCreateAPIView):    
     queryset = Book.objects.all()
@@ -52,3 +55,11 @@ class ReservationUpdate(generics.RetrieveUpdateDestroyAPIView):
     queryset = Bookreservation.objects.all()
     serializer_class = BookReservationSerializer  
     permission_classes = [IsAuthenticated]    
+
+
+class MyTokenObtainPairView(TokenObtainPairView):
+    #authentification with token
+    serializer_class = MyTokenObtainPairSerializer   
+
+class MyTokenVerifyView(TokenVerifyView):
+   serializer_class=MyTokenVerifySerializer     
