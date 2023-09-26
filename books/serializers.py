@@ -6,9 +6,6 @@ from rest_framework import exceptions
 from django.conf import settings
 from rest_framework_simplejwt.tokens import Token
 from rest_framework_simplejwt.exceptions import TokenError
-
-
-
 class UserSerializer(serializers.ModelSerializer) : 
     
      class Meta : 
@@ -55,6 +52,19 @@ class BookSerializer(serializers.ModelSerializer):
          'date_release',
          'name'
          ]
+class BookReservationSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Bookreservation
+
+        fields = [
+         'id',
+         'user' ,
+         'book',
+         'date1',
+         'date2'
+         ]
+
 
 
 

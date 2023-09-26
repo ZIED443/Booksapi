@@ -4,6 +4,8 @@ from rest_framework import generics
 from .models import *
 from rest_framework.permissions import  IsAuthenticated
 from books.serializers import *
+
+
 class Booklist(generics.ListCreateAPIView):    
     queryset = Book.objects.all()
     serializer_class = BookSerializer
@@ -38,3 +40,15 @@ class UserUpdate(generics.RetrieveUpdateDestroyAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer  
     permission_classes = [IsAuthenticated]
+
+class ReservationList(generics.RetrieveUpdateDestroyAPIView):
+    
+    queryset = Bookreservation.objects.all()
+    serializer_class = BookReservationSerializer  
+    permission_classes = [IsAuthenticated]
+
+class ReservationUpdate(generics.RetrieveUpdateDestroyAPIView):
+    
+    queryset = Bookreservation.objects.all()
+    serializer_class = BookReservationSerializer  
+    permission_classes = [IsAuthenticated]    
