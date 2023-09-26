@@ -39,10 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
      'rest_framework',
      'books',
-    # 'rest_framework_simplejwt',
+    'rest_framework_simplejwt',
+    'corsheaders',
+
     # 'drf_spectacular',
-  
-    # 'corsheaders',
 ]
 
 MIDDLEWARE = [

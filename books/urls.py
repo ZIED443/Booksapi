@@ -1,11 +1,10 @@
 from django.urls import path
-
 from rest_framework_simplejwt.views import (
-    TokenRefreshView,
-    
+    TokenRefreshView,   
 )
 from . views import *
 from . import views
+
 
 urlpatterns = [
  path('user/' , views.UserList.as_view(), name="user list "),
