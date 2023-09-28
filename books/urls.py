@@ -15,6 +15,7 @@ urlpatterns = [
  path('author/<int:pk>',views.Authorupdate.as_view(),name="Authors update "),
  path('reservation/' , views.ReservationList.as_view(), name="reservation list "),
  path('reservation/<int:pk>' , views.ReservationUpdate.as_view(), name="reservation update "),
+ path('api/reservationselect/', ReservationSelect.as_view(), name='reservation-select'),
 
  path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
  path('token/verify/', views.MyTokenVerifyView.as_view(), name='token_verify'),

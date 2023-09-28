@@ -1,7 +1,7 @@
 
 import pytest
 from django.utils import timezone
-from .models import CustomUser, User, Auhor, Book, Bookreservation
+from ..models import  User, Auhor, Book, Bookreservation
 
 @pytest.mark.django_db
 def test_custom_user_create_user():
