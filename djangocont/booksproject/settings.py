@@ -17,7 +17,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 from dotenv import load_dotenv
 
 load_dotenv() 
-print (os.getenv("SECRET_KEY"))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -29,9 +28,8 @@ SECRET_KEY =os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG')
 
-ALLOWED_HOSTS = []
-if not DEBUG:
-    ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*']
+
 
 
 # Application definition
