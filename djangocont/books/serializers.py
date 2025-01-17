@@ -49,7 +49,7 @@ class BookSerializer(serializers.ModelSerializer):
          'name'
          ]
     def get_authorname(self, obj):
-        return obj.author.user_name if obj.author else None
+        return obj.author.name if obj.author else None
 class BookReservationSerializer(serializers.ModelSerializer):
 
     class Meta:

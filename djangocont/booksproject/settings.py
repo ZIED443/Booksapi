@@ -14,19 +14,17 @@ from pathlib import Path
 import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-from dotenv import load_dotenv
 
-load_dotenv() 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-SECRET_KEY =os.getenv('SECRET_KEY')
+SECRET_KEY =os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG')
+DEBUG = os.environ['DEBUG']
 
 ALLOWED_HOSTS = ['*']
 
@@ -86,10 +84,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'apidb',
-        'USER': os.getenv('db_user'),
-        'PASSWORD': os.getenv('db_password'),
+        'USER': os.environ['db_user'],
+        'PASSWORD': os.environ['db_password'],
         'HOST': 'db',  
-        'PORT': os.getenv('db_port'),
+        'PORT': os.environ['db_port'],
     }
 }
 
@@ -139,8 +137,8 @@ AUTH_USER_MODEL = 'books.User'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.office365.com'  
-EMAIL_PORT = os.getenv('email_port')  
+EMAIL_PORT = os.environ['email_port'],    
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER =os.getenv('email_login')  # Your Hotmail_login
-EMAIL_HOST_PASSWORD = os.getenv('email_password')  # Your Hotmail email password
-DEFAULT_FROM_EMAIL = os.getenv('email_login')  # Default "From" email address
+EMAIL_HOST_USER =os.environ['email_login'] # Your Hotmail_login
+EMAIL_HOST_PASSWORD = os.environ['email_password']  # Your Hotmail email password
+DEFAULT_FROM_EMAIL = os.environ['email_login']  # Default "From" email address

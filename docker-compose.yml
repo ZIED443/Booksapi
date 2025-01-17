@@ -26,6 +26,8 @@ services:
       - "8000:8000"
     depends_on:
       - db
+    env_file:
+      - .env    
     environment:
       DATABASE_URL: postgres://zied:password@db:5432/apidb  # Optional if using Django environment variables
 
