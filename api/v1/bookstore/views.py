@@ -16,6 +16,8 @@ class AuthorListCreateAPIView(APIView):
     permission_classes = [IsAdminUser]
 
     @swagger_auto_schema(
+        tags=["author"] , 
+
         operation_summary="List all authors",
         operation_description="Retrieve a list of all authors. Admins only.",
         responses={200: AuthorSerializer(many=True)}
@@ -26,6 +28,8 @@ class AuthorListCreateAPIView(APIView):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     @swagger_auto_schema(
+        tags=["author"] , 
+
         operation_summary="Create an author",
         operation_description="Create a new author with name and birthday. Admins only.",
         request_body=AuthorSerializer,
@@ -46,6 +50,8 @@ class AuthorRetrieveUpdateDeleteAPIView(APIView):
         return get_object_or_404(Author, pk=pk)
 
     @swagger_auto_schema(
+        tags=["author"] , 
+
         operation_summary="Retrieve an author",
         operation_description="Get a single author by ID. Admins only.",
         responses={200: AuthorSerializer, 404: "Not found"}
@@ -56,6 +62,8 @@ class AuthorRetrieveUpdateDeleteAPIView(APIView):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     @swagger_auto_schema(
+        tags=["author"] , 
+
         operation_summary="Update an author",
         operation_description="Update all fields of an author. Admins only.",
         request_body=AuthorSerializer,
@@ -70,6 +78,8 @@ class AuthorRetrieveUpdateDeleteAPIView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     @swagger_auto_schema(
+        tags=["author"] , 
+
         operation_summary="Partially update an author",
         operation_description="Update some fields of an author. Admins only.",
         request_body=AuthorSerializer,
@@ -84,6 +94,7 @@ class AuthorRetrieveUpdateDeleteAPIView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     @swagger_auto_schema(
+        tags=["author"] , 
         operation_summary="Delete an author",
         operation_description="Delete an author by ID. Admins only.",
         responses={204: "No content", 404: "Not found"}
@@ -101,6 +112,8 @@ class BookListCreateAPIView(APIView):
     permission_classes = [IsAdminUser]
 
     @swagger_auto_schema(
+                tags=["books"],
+
         operation_summary="List all books",
         operation_description="Retrieve a list of all books. Admins only.",
         responses={200: BookSerializer(many=True)}
@@ -111,6 +124,8 @@ class BookListCreateAPIView(APIView):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     @swagger_auto_schema(
+                tags=["books"],
+
         operation_summary="Create a book",
         operation_description="Create a new book with name, author, date_release, total_copies, etc. Admins only.",
         request_body=BookSerializer,

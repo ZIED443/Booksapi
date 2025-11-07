@@ -4,7 +4,7 @@ from apps.reservation.models import Reservation
 class ReservationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Reservation
-        fields = ["id", "user", "book", "start_date", "end_date", "created_at"]
+        fields = ["id", "user", "book", "start_date", "end_date" ]
 
     def validate(self, attrs):
         if attrs["end_date"] <= attrs["start_date"]:
