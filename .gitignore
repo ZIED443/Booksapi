@@ -17,7 +17,7 @@ db.sqlite3
 
 # Environment variable files
 .env
-
+.env*
 # Virtual environment
 venv/
 env/
@@ -52,3 +52,8 @@ test_coverage/
 build/
 dist/
 *.egg-info/
+
+# Django static files (collected)
+staticfiles/
+
+media/
