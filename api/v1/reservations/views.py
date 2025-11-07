@@ -12,7 +12,7 @@ from drf_yasg import openapi
 class ReservationListCreateAPIView(APIView):
     permission_classes = [IsAdminUser]
     @swagger_auto_schema(
-        tags=["reservation"],
+        tags=["reservations"],
         operation_summary="List all reservations",
         operation_description="Retrieve a list of all book reservations. Admins only.",
         responses={200: ReservationSerializer(many=True)},
@@ -43,6 +43,8 @@ class ReservationRetrieveUpdateDeleteAPIView(APIView):
         return get_object_or_404(Reservation, pk=pk)
 
     @swagger_auto_schema(
+        tags=["reservations"],
+
         operation_summary="Retrieve a reservation",
         operation_description="Get a single reservation by its ID. Admins only.",
         responses={200: ReservationSerializer, 404: "Not found"},
@@ -53,6 +55,8 @@ class ReservationRetrieveUpdateDeleteAPIView(APIView):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     @swagger_auto_schema(
+        tags=["reservations"],
+
         operation_summary="Update a reservation",
         operation_description="Update all fields of a reservation by its ID. Admins only.",
         request_body=ReservationSerializer,
@@ -67,6 +71,8 @@ class ReservationRetrieveUpdateDeleteAPIView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     @swagger_auto_schema(
+        tags=["reservations"],
+
         operation_summary="Partially update a reservation",
         operation_description="Update some fields of a reservation. Admins only.",
         request_body=ReservationSerializer,
@@ -81,6 +87,8 @@ class ReservationRetrieveUpdateDeleteAPIView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     @swagger_auto_schema(
+        tags=["reservations"],
+
         operation_summary="Delete a reservation",
         operation_description="Delete a reservation by its ID. Admins only.",
         responses={204: "No content", 404: "Not found"},
