@@ -23,6 +23,8 @@ INSTALLED_APPS = [
     'apps.bookstore.apps.BookstoreConfig',
     'apps.reservation.apps.ReservationConfig',
     'rest_framework_simplejwt',
+        'drf_yasg',
+
 ]
 
 MIDDLEWARE = [
