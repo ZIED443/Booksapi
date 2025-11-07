@@ -9,3 +9,4 @@ Faker==19.6.2
 factory-boy==3.3.0
 python-dotenv
 gunicorn
+drf-yasg
