@@ -1,6 +1,16 @@
 #!/bin/sh
 set -e
 
+echo "Running tests..."
+pytest apps/ --ds=core.settings.test -v
+
+
+
+if [ $? -ne 0 ]; then
+    echo " Tests failed! Exiting container."
+    exit 1
+fi
+echo " All tests passed."
 echo "Making and applying migrations..."
 python manage.py makemigrations users --noinput
 python manage.py makemigrations bookstore --noinput

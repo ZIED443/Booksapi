@@ -10,3 +10,5 @@ factory-boy==3.3.0
 python-dotenv
 gunicorn
 drf-yasg
+pytest 
+pytest-django

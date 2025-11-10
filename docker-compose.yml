@@ -12,7 +12,7 @@ services:
       - "${DB_PORT}:5432"
     volumes:
       - ${POSTGRES_VOLUME}:/var/lib/postgresql/data
-
+  
   web:
     build:
       context: .
@@ -26,8 +26,7 @@ services:
       - "${DJANGO_PORT}:${DJANGO_PORT}"
     depends_on:
       - db
-    environment:
-      DATABASE_URL: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}
+  
 
 volumes:
     postgres_data_test:
