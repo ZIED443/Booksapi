@@ -1,4 +1,4 @@
-# api/v1/reservation/urls.py
+# api/v1//urls.py
 from django.urls import path
 from .views import ReservationListCreateAPIView, ReservationRetrieveUpdateDeleteAPIView
 
